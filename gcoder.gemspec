@@ -4,7 +4,6 @@ Gem::Specification.new do |s|
   s.name              = 'gcoder'
   s.version           = GCoder::VERSION
   s.platform          = Gem::Platform::RUBY
-  s.date              = Date.today.strftime('%F')
   s.homepage          = 'http://github.com/heycarsten/gcoder'
   s.authors           = ['Carsten Nielsen', 'Christos Pappas', 'GUI']
   s.email             = 'heycarsten@gmail.com'

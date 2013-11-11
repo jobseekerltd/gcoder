@@ -43,6 +43,11 @@ describe GCoder::Geocoder::Request do
     q.must_equal 'a=test&q=hello+world'
   end
 
+  it 'should create correct query params for components' do
+    q = GCoder::Geocoder::Request.new('abc', :components => {country: 'AU', locality: 'locality'}).path
+    q.must_include 'components=country%3AAU%7Clocality%3Alocality'
+  end
+
   it '(when passed a bounds option) should generate correct query params' do
     GCoder::Geocoder::Request.new('q', :bounds => [[1,2], [3,4]]).tap do |req|
       req.params[:bounds].must_equal '1,2|3,4'

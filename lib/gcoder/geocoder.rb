@@ -32,6 +32,9 @@ module GCoder
         p[:region]   = @config[:region]   if @config[:region]
         p[:bounds]   = bounds             if @config[:bounds]
         p[:client]   = @config[:client]   if @config[:client]
+        if @config[:components]
+          p[:components] = @config[:components].map{|k, v| "#{k}:#{v}"}.join("|")
+        end
         p
       end
 
